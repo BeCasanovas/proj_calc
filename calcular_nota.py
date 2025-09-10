@@ -9,3 +9,14 @@ def calcular_nota_as(nota_final, ap1, ap2, ac):
         else:
             nota_as = (7 - (ap1 * 0.4 + ac * 0.2)) / 0.4
         return nota_as
+    
+def verficar_nota(ap1, ap2, ac):
+    nota = round(calcular_nota(ap1, ap2, ac), 2)
+    if nota >= 7:
+        return f"Aprovado, com nota {nota:.2f}"
+    elif nota < 7:
+        nota_as = round(calcular_nota_as(nota, ap1, ap2, ac), 2)
+        if nota_as is not None and nota_as <= 10:
+            return f"Precisa tirar {nota_as:.2f} na AS"
+        else:
+            return "Reprovado"
