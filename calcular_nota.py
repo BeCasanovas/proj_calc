@@ -4,10 +4,13 @@ def calcular_nota(ap1, ap2, ac):
 
 def calcular_nota_as(nota_final, ap1, ap2, ac):
     if nota_final < 7:
+        # Mantém a maior nota entre AP1 e AP2, substitui a menor pela AS
         if ap1 >= ap2:
-            nota_as = (7 - (ap2 * 0.4 + ac * 0.2)) / 0.4
+            # Mantém AP1, substitui AP2 pela AS
+            nota_as = (7 - ap1 * 0.4 - ac * 0.2) / 0.4
         else:
-            nota_as = (7 - (ap1 * 0.4 + ac * 0.2)) / 0.4
+            # Mantém AP2, substitui AP1 pela AS
+            nota_as = (7 - ap2 * 0.4 - ac * 0.2) / 0.4
         return nota_as
     
 def verficar_nota(ap1, ap2, ac):
